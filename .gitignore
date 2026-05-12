@@ -1,6 +1,6 @@
 node_modules/
 papers.json
-summarized_history.json
+papers_summarized.json
 *.tmp
 .env
 .env.local
