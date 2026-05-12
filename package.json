@@ -1,0 +1,15 @@
+{
+  "name": "irritable-bowel-syndrome",
+  "private": true,
+  "version": "1.0.0",
+  "description": "IBS 腸躁症文獻日報 · 每日自動更新",
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch_papers.js",
+    "report": "node scripts/generate_report.js",
+    "index": "node scripts/generate_index.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+papers.json
+summarized_history.json
+*.tmp
+.env
+.env.local
