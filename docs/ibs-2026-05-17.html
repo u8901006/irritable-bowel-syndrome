@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年5月17日（週日）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年5月17日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年5月17日（週日）</p>
+    <div class="report-meta">
+      <span>📊 2 篇文獻</span>
+      <span>⭐ TOP 2 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日文獻聚焦於腸躁症（IBS）的診斷標準演進與非藥物介入。系統性文獻回顧顯示，由於羅馬 IV 標準更為嚴格，導致兒童及青少年功能性腹痛障礙的整體盛行率降至 8.42%，且亞型分布發生顯著變化；另一方面，隨機對照試驗證實為期三個月的瑜珈介入能透過調節自主神經系統，有效改善 IBS 患者的生活品質，再次強化了腦腸軸與生活型態介入在 IBS 管理中的核心價值。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge">N/A</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">根據羅馬 III 與 IV 標準，兒童與青少年功能性腹痛障礙之全球盛行率：系統性文獻回顧與統合分析</h3>
+      <p class="paper-title-en">Global Prevalence of Functional Abdominal Pain Disorder among Children and Adolescents According to the Rome III and IV Criteria: A Systematic Review and Meta-Analysis.</p>
+      <p class="one-liner">羅馬 IV 標準比 III 更嚴格，導致兒童青少年功能性腹痛障礙整體盛行率降至 8.42%，且腸躁症（IBS）盛行率大幅下降，功能性消化不良成為最常見亞型。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">一般兒童與青少年族群</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">應用羅馬 III 或羅馬 IV 診斷標準進行盛行率評估</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">羅馬 III 與羅馬 IV 標準下的盛行率差異</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">功能性腹痛障礙（FAPD）及其四種亞型（IBS、FD、AM、FAP-NOS）的匯總盛行率</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>有助於兒科腸胃科醫師了解診斷標準更新對流行病學數據的影響，提醒臨床上使用不同標準可能導致盛行率與亞型分布的認知差異，但不直接改變單一患者的治療策略。</p>
+      <div class="paper-tags"><span class="tag">Pediatric IBS</span><span class="tag">Clinical Guidelines</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/40852741/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge">N/A</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">探討瑜珈對腸躁症患者自主神經功能、社會功能與生活品質的影響</h3>
+      <p class="paper-title-en">Exploring the Impact of Yoga on Autonomic Nervous System Function, Social Functioning, and Quality of Life in People with IBS.</p>
+      <p class="one-liner">為期三個月的瑜珈介入能顯著降低靜息心率與心率變異性低高頻比，並有效提升腸躁症患者的整體生活品質。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">依據羅馬 IV 標準確診為 IBS 的 18-45 歲成年人</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">為期 3 個月的瑜珈介入</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">對照組（未接受瑜珈介入）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">自主神經功能指標（靜息心率、心率變異性、瓦氏動作比）與 IBS-QOL 生活品質評分</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供瑜珈作為輔助療法的具體客觀生理數據（如心率變異性），適合推薦給願意嘗試非藥物治療且無運動禁忌的患者，但需考量患者意願與長期規律執行的門檻。</p>
+      <div class="paper-tags"><span class="tag">Gut-Brain Axis</span><span class="tag">Exercise / Lifestyle</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42128431/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Exercise / Lifestyle</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pain / Sensitization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Sleep / Stress</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">羅馬 IV 標準</span> <span class="keyword-chip">兒科盛行率</span> <span class="keyword-chip">瑜珈</span> <span class="keyword-chip">自主神經功能</span> <span class="keyword-chip">心率變異性</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+    <p class="footer-text">Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
