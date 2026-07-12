@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年7月12日（週日）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年7月12日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年7月12日（週日）</p>
+    <div class="report-meta">
+      <span>📊 4 篇文獻</span>
+      <span>⭐ TOP 4 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日文獻顯示IBS研究正朝向精準醫療與跨界共病機制發展。腸道菌代謝物（FAEs）被證實能連結胰島素抗性與IBS-D，開啟微生物療法新視角；大規模基因研究則點出維生素B1代謝對腸道蠕動的關鍵影響，提供極具潛力的飲食介入策略。此外，SIBO在腹瀉型IBS的高盛行率獲得大型統合分析確認，強化臨床篩檢依據。整體而言，從代謝、營養到神經免疫軸線，IBS的治療靶點正變得更加多元且具可操作性。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge">N/A</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">功能性胃腸道疾病患者小腸細菌過度生長盛行率的系統性文獻回顧與統合分析</h3>
+      <p class="paper-title-en">[Systematic review and meta-analysis of the prevalence of small intestinal bacterial overgrowth in patients with functional gastrointestinal disorders].</p>
+      <p class="one-liner">大型統合分析確認功能性胃腸道疾病（特別是腹瀉型IBS）患者的小腸細菌過度生長盛行率約為40%，且受檢測方法與地域顯著影響。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">功能性胃腸道疾病患者（包含IBS、功能性便秘、功能性消化不良）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">經由呼氣測試或小腸抽吸液培養進行SIBO診斷</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無明顯胃腸道症狀的對照組</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">SIBO盛行率（試驗組39% vs 對照組11.5%，OR=5.27）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>直接提供臨床常見疑問的強力循證依據，有助於醫師評估IBS-D患者進行SIBO篩檢的成本效益，並理解乳果糖與葡萄糖呼氣測試的盛行率差異。</p>
+      <div class="paper-tags"><span class="tag">Microbiome</span><span class="tag">SIBO</span><span class="tag">Meta-analysis</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42402885/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge">N/A</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">排便頻率的遺傳學剖析揭示維生素B1代謝及其他可作用路徑在腸道蠕動調節中的角色</h3>
+      <p class="paper-title-en">Genetic dissection of stool frequency implicates vitamin B1 metabolism and other actionable pathways in the modulation of gut motility.</p>
+      <p class="one-liner">大規模全基因組關聯分析發現維生素B1代謝相關基因影響腸道蠕動，且維生素B1攝取量能根據基因型調節排便頻率。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">268,606名歐洲與東亞裔個體（含UK Biobank參與者）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">維生素B1（硫胺素）攝取量與特定基因型（SLC35F3/XPR1）評分</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同基因型或不同維生素B1攝取量的基線對照</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">排便頻率的改變與腸道蠕動相關遺傳路徑的鑑定</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>維生素B1是極為安全且便宜的營養素，對於合併蠕動異常的IBS患者具備高潛力的飲食介入價值，但尚未經過臨床隨機對照試驗（RCT）的直接驗證。</p>
+      <div class="paper-tags"><span class="tag">Diet / Nutrition</span><span class="tag">Genetics</span><span class="tag">Gut Motility</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/41558814/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge">N/A</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">產生脂肪酸乙醇醯胺的腸道菌緩解伴隨胰島素抗性的腹瀉型腸躁症</h3>
+      <p class="paper-title-en">Gut bacteria that produce fatty acid ethanolamides alleviate diarrhea-predominant IBS with insulin resistance.</p>
+      <p class="one-liner">腸道菌衍生的脂肪酸乙醇醯胺（尤其是OEA）透過激活PPARα受體上調SERT，有效緩解合併胰島素抗性之IBS-D的腹瀉與內臟過敏。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">伴隨胰島素抗性的腹瀉型腸躁症(IBS-D)患者及小鼠模型</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">口服OEA、高FAE糞便微生物移植或补充FAE產生菌（如大腸桿菌ereT+）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">健康對照組或安慰劑</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">血清FAE水平提升、腹瀉與內臟過敏緩解、周邊血清素濃度降低</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>機轉研究極具突破性且已有臨床試驗註冊，但將特定細菌或OEA作為常規處方用藥仍需漫長的藥物開發與臨床驗證過程。</p>
+      <div class="paper-tags"><span class="tag">Microbiome</span><span class="tag">Metabolism</span><span class="tag">IBS-D</span><span class="tag">Gut-Brain Axis</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42320473/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.28s">
+      <div class="paper-header">
+        <span class="rank-badge">#4</span>
+        <span class="journal-badge">N/A</span>
+        <span class="utility-badge" style="background:#8a7a6a">低實用</span>
+      </div>
+      <h3 class="paper-title-zh">周邊血單核球中失調的糖皮質素反應性免疫基因作為自閉症譜系障礙與腸躁症共有的分子特徵</h3>
+      <p class="paper-title-en">Dysregulated glucocorticoid-responsive immune genes in peripheral blood mononuclear cells as a shared molecular signature of autism spectrum disorder and irritable bowel syndrome.</p>
+      <p class="one-liner">研究發現自閉症與IBS患者周邊血單核球中存在共有的壓力免疫基因失調特徵，並篩選出可望恢復恆定狀態的潛在藥物。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">自閉症譜系障礙(ASD)與腸躁症(IBS)患者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">周邊血單核球(PBMC)轉錄組學分析與單細胞RNA測序</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">隱含健康對照組的基線表現</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">鑑定出四個核心鑑別基因（LRFN1, NUAK2等）及潛在逆轉藥物（如RN-486）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>屬於高度基礎的轉譯醫學研究，雖然揭示了腦腸軸共病機制，但距離開發出實際可用的生物標記檢測或臨床用藥仍極為遙遠。</p>
+      <div class="paper-tags"><span class="tag">Gut-Brain Axis</span><span class="tag">Biomarkers</span><span class="tag">Immunology</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42424309/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pain / Sensitization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Sleep / Stress</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Exercise / Lifestyle</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">脂肪酸乙醇醯胺</span> <span class="keyword-chip">維生素B1</span> <span class="keyword-chip">小腸細菌過度生長</span> <span class="keyword-chip">糖皮質素反應性免疫</span> <span class="keyword-chip">腦腸軸</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+    <p class="footer-text">Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
