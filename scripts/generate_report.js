@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-// generate_report.js — Analyze IBS papers with Zhipu GLM-5-Turbo and generate HTML report
+// generate_report.js — Analyze IBS papers with NVIDIA Nemotron and generate HTML report
 // Usage: node scripts/generate_report.js --input papers.json --output docs/ibs-2026-05-12.html
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 
-const API_BASE = process.env.ZHIPU_API_BASE || 'https://open.bigmodel.cn/api/coding/paas/v4';
-const MODEL_CHAIN = ['glm-5-turbo', 'glm-4.7', 'glm-4.7-flash'];
-const MAX_TOKENS = 50000;
+const API_BASE = process.env.NVIDIA_API_BASE || 'https://integrate.api.nvidia.com/v1';
+const MODEL_CHAIN = ['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-nano-30b-a3b'];
+const MAX_TOKENS = 16384;
 const REQUEST_TIMEOUT = 480000;
 
 const SYSTEM_PROMPT = `你是腸躁症（IBS）研究領域的專業醫學文獻分析師，同時也是一位科學傳播者。你的任務是：
@@ -111,7 +111,7 @@ function parseArgs() {
   return opts;
 }
 
-async function callZhipuAPI(apiKey, userPrompt, modelIndex = 0) {
+async function callNvidiaAPI(apiKey, userPrompt, modelIndex = 0) {
   if (modelIndex >= MODEL_CHAIN.length) {
     throw new Error('All models in fallback chain exhausted');
   }
@@ -136,9 +136,11 @@ async function callZhipuAPI(apiKey, userPrompt, modelIndex = 0) {
             { role: 'system', content: SYSTEM_PROMPT },
             { role: 'user', content: userPrompt },
           ],
-          temperature: 0.3,
-          top_p: 0.9,
+          temperature: 1.0,
+          top_p: 0.95,
           max_tokens: MAX_TOKENS,
+          stream: false,
+          chat_template_kwargs: { enable_thinking: false },
         }),
         signal: controller.signal,
       });
@@ -188,7 +190,7 @@ async function callZhipuAPI(apiKey, userPrompt, modelIndex = 0) {
   }
 
   console.log(`  Model ${model} failed all retries, trying next fallback...`);
-  return callZhipuAPI(apiKey, userPrompt, modelIndex + 1);
+      return callNvidiaAPI(apiKey, userPrompt, modelIndex + 1);
 }
 
 function repairJSON(str) {
@@ -544,7 +546,7 @@ function generateHTML(analysis, date) {
       <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
       <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
     </div>
-    <p class="footer-text">Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
   </footer>
 </div>
 </body>
@@ -567,9 +569,9 @@ function saveSummarizedPMIDs(date, pmids) {
 
 async function main() {
   const opts = parseArgs();
-  const apiKey = opts.apiKey || process.env.ZHIPU_API_KEY || '';
+  const apiKey = opts.apiKey || process.env.NVIDIA_API_KEY || '';
   if (!apiKey) {
-    console.error('Error: ZHIPU_API_KEY not set');
+    console.error('Error: NVIDIA_API_KEY not set');
     process.exit(1);
   }
 
@@ -602,7 +604,7 @@ async function main() {
     };
   } else {
     const userPrompt = buildUserPrompt(papers);
-    analysis = await callZhipuAPI(apiKey, userPrompt);
+    analysis = await callNvidiaAPI(apiKey, userPrompt);
 
     if (!analysis.top_picks) analysis.top_picks = analysis.top_papers || [];
     if (!analysis.other_papers) analysis.other_papers = [];

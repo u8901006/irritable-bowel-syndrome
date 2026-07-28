@@ -100,7 +100,7 @@ ${listItems}
       <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
       <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
     </div>
-    <p class="footer-text">Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
   </div>
 </div>
 </body>
