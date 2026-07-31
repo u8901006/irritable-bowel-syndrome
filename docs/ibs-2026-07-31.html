@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年7月31日（週五）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年7月31日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年7月31日（週五）</p>
+    <div class="report-meta">
+      <span>📊 2 篇文獻</span>
+      <span>⭐ TOP 2 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日兩篇IBS相關文獻聚焦於機制探討與文獻計量分析：一篇探討電針於ST37穴位透過調節5-HT7受體介導的NGF表達緩解大鼠內臟過敏，另一篇則以計量書目分析闡明功能性腹痛綜合症（FAPS）之研究熱點，突顯小兒族群、腸腦軸與非藥物療法（如益生菌、飲食、認知行為療法）為主導趨勢，顯示基礎機制研究與臨床流行病學研究並重的發展格局。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge">未提供（原文為中文期刊，標題未註明）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">電針於商丘（ST37）透過5-HT7受體介導NGF表達調節緩解大鼠腸躁症內臟過敏之機制研究</h3>
+      <p class="paper-title-en">Study on the mechanism of electroacupuncture at &quot;Shangjuxu&quot;(ST37) in regulating the expression of NGF mediated by 5-HT7 receptor and relieving visceral hypersensitivity in IBS rats</p>
+      <p class="one-liner">電刺激ST37穴位可顯著降低IBS大鼠之內臟過敏，並逆轉結腸中5-HT7受體、NGF及其共表達細胞的上調，同時提升IL-10表達，顯示其透過5-HT7/NGF通路緩解內臟痛覺過敏的潛在機制。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">經TNBS誘導之大鼠IBS模型（雄性SD大鼠，n=18，分為正常對照、模型、電針三組）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">雙側商丘（ST37）穴位電針（2 Hz，1.0 mA，每日30分鐘，連續10天）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">未處理之IBS模型組（模型組）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">電針組顯著降低內臟運動反應（AWR）與腹外斜肌EMG活動（p&lt;0.05），降低結腸MPO活性、TNF-α、5-HT7、TrkA及NGF蛋白表達及5-HT7/PGP9.5與NGF/PGP9.5雙標記陽性細胞率，同時上調IL-10表達；組織病理顯示電針改善結粘膜上皮細胞排列、減少水腫及炎症細胞浸潤</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>該研究為動物實驗，雖闡明電針透過5-HT7/NGF通路緩解內臟過敏之機制，具神經免疫學意義，但缺乏人體臨床試驗支持，難直接轉化為臨床治療決策， toutefois 提供針灸在功能性腸胃疾病中的生物學基礎，具有中長期啟發價值。</p>
+      <div class="paper-tags"><span class="tag">electroacupuncture</span><span class="tag">5-HT7 receptor</span><span class="tag">NGF</span><span class="tag">visceral hypersensitivity</span><span class="tag">gut-brain axis</span><span class="tag">Traditional Chinese Medicine</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42482582/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge">未提供（原文未註明期刊名稱）</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">功能性腹痛綜合症研究現狀、熱點與前景：書目計量與視覺化分析</h3>
+      <p class="paper-title-en">Research status, hotspots, and frontiers in functional abdominal pain syndrome: A bibliometric and visual analysis.</p>
+      <p class="one-liner">近30年文獻計量分析顯示，功能性腹痛綜合症（FAPS）研究以美國為主導、以兒童為核心族群，熱點聚焦於腸腦軸、 microbiota-gut-brain axis 及非藥物療法（益生菌、飲食、CBT），而生物標誌物與成人導向研究相對不足。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">功能性腹痛綜合症（FAPS）相關文獻（1996–2025年，共996篇）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">書目計量方法（Web of Science 數據，使用 CiteSpace 與 VOSviewer 進行視覺化分析）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組（為文獻計量描述性研究）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">研究量峰值出現於2021年；美國產出最多且中心性最高；《兒童胃腸腸病營養學雜誌》發文最多；Marc A. Benninga 為產出最高作者；關鍵詞「兒童」最常見；研究主題聚焦於疾病定義演進、腸腦互動 disorder 模式、microbiota-gut-brain axis、兒童IBS、功能性腹痛及非藥物療法（益生菌、飲食、CBT），而成人專項研究與生物標誌物研究較少</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>此計量分析提供FAPS領域之全景脈絡，清晰指出研究熱點與不足（如缺乏成人導向與生物標誌物研究），為未來臨床試驗設計、資源分配與跨領域合作（腸胃科、神經科、心理科）提供重要策略參考，具高度指導性與翻譯價值。</p>
+      <div class="paper-tags"><span class="tag">functional abdominal pain syndrome</span><span class="tag">FAPS</span><span class="tag">bibliometric analysis</span><span class="tag">microbiota-gut-brain axis</span><span class="tag">pediatrics</span><span class="tag">non-pharmacological intervention</span><span class="tag">probiotics</span><span class="tag">CBT</span><span class="tag">brain-gut interaction</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42499051/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pain / Sensitization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Exercise / Lifestyle</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Sleep / Stress</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">electroacupuncture</span> <span class="keyword-chip">5-HT7 receptor</span> <span class="keyword-chip">NGF</span> <span class="keyword-chip">visceral hypersensitivity</span> <span class="keyword-chip">functional abdominal pain syndrome</span> <span class="keyword-chip">microbiota-gut-brain axis</span> <span class="keyword-chip">pediatrics</span> <span class="keyword-chip">non-pharmacological therapy</span> <span class="keyword-chip">acupuncture</span> <span class="keyword-chip">Traditional Chinese Medicine</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
