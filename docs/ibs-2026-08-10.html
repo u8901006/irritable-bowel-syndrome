@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年8月10日（週一）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年8月10日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年8月10日（週一）</p>
+    <div class="report-meta">
+      <span>📊 4 篇文獻</span>
+      <span>⭐ TOP 4 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日IBS研究聚焦於腸微生物與大腦的雙向互動，包括糞便微生物叢分析揭示Firmicutes減少與腹痛相關、經顱磁刺激抑制 medial prefrontal cortex 緩解內臟疼痛、腸源性 indole 經海馬 AhR 通路調節情緒症狀，以及老年人腸道症狀與短鏈脂肪酸的關聯。多項研究強調腸脑軸機制及微生物代謝物在情緒與疼痛調節中的角色，顯示針對微生物代謝與神經調控的治療策略具有潛力。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">低頻率經顱磁刺激透過抑制 medial prefrontal cortex 減輕腹瀉型腸躁症內臟疼痛。</h3>
+      <p class="paper-title-en">Low-frequency repetitive transcranial magnetic stimulation attenuates visceral pain in IBS with diarrhoea via inhibition of the medial prefrontal cortex.</p>
+      <p class="one-liner">針對腹瀉型IBS患者的medial prefrontal cortex施以低頻率經顱磁刺激，可持續減輕內臟疼痛並改善腸道習慣，效果可維持至少8週。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">腹瀉型腸躁症（IBS-D）患者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">為期2週的medial prefrontal cortex針對性低頻率經顱磁刺激（lf-rTMS）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">未明確提及對照組（假設為假性rTMS或無處理）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">內臟疼痛顯著緩解、腸道習慣改善、mPFC活動降低，效果持續至少8週</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>具體描述經驗證的非侵入性 neuromodulation 治療方案，有明確機制（抑制mPFCGlu神經元活動）和持續療效（≥8週），對難治性IBS-D內臟疼痛具有高度臨床轉化潛力。</p>
+      <div class="paper-tags"><span class="tag">gut-brain axis</span><span class="tag">neuromodulation</span><span class="tag">visceral pain</span><span class="tag">rTMS</span><span class="tag">medial prefrontal cortex</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/41629148/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">腸道微生物代謝經海馬 indole-AhR 通路調節情緒症狀。</h3>
+      <p class="paper-title-en">Gut microbial metabolism via hippocampal indole-AhR signaling regulates emotional symptoms.</p>
+      <p class="one-liner">IBS患者中Alistipes shahii減少導致腸道indole生成降低，經海馬AhR訊號降低海馬顆粒細胞活動，引發情緒症狀；補充indole或激活該通路可逆轉症狀。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">IBS患者及IBS模型滑鼠</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text"> tryptophanase-producing microbiota transplantation、indole/tryptophanase補充、vDG神經元chemohereditary激活或diosmin（AhR激動劑）處理</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">對照組（未處理IBS模型或健康對照）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">介入可恢復indole水平、核AhR表達、vDG顆粒細胞活動，並救援情緒症狀</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>闡明了腸脑軸的具體分子機制（Alistipes shahii → tryptophanase → indole → hippocampal AhR → vDG），並驗證多種介入策略（ microbiota 移植、補充劑、chemogenetics、已批准藥物diosmin）可逆轉情緒症狀，具轉化潛力，但尚未於人體完成治療試驗。</p>
+      <div class="paper-tags"><span class="tag">gut-brain axis</span><span class="tag">microbial metabolism</span><span class="tag">indole</span><span class="tag">AhR</span><span class="tag">hippocampus</span><span class="tag">emotional symptoms</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/41928504/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">腸躁症伴小腸細菌過度生長患者的糞便微生物叢分析。</h3>
+      <p class="paper-title-en">Fecal microbiota profiling in patients with irritable bowel syndrome and small intestinal bacterial overgrowth.</p>
+      <p class="one-liner">IBS伴SIBO組糞便微生物多樣性較無SIBO組高，Firmicutes相對豐度顯著降低，並與腹痛及IBS症狀嚴重程度負相關，提示微生物失調可能參與症狀生成。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">IBS患者（分為IBS.SIBO+和IBS.SIBO-組）及正常對照組（NCs）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入，為觀察性糞便微生物叢分析（16S rRNA定序）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">IBS.SIBO+ vs IBS.SIBO- vs NCs</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">IBS.SIBO-組微生物豐度顯著低於IBS.SIBO+組；Firmicutes減少與腹痛、IBS症狀嚴重程度負相關；Defecation distress threshold與Firmicutes正相關</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供IBS患者中SIBO存在與否對糞便微生物叢結構的重要觀察，並連結特定菌群（Firmicutes）與臨床症狀（腹痛、症狀嚴重度）相關，有助於微生物為基礎的分層治療構想，但尚未檢驗干預效果。</p>
+      <div class="paper-tags"><span class="tag">microbiome</span><span class="tag">SIBO</span><span class="tag">Firmicutes</span><span class="tag">visceral hypersensitivity</span><span class="tag">IBS subtyping</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42566575/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.28s">
+      <div class="paper-header">
+        <span class="rank-badge">#4</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">老年人胃腸症狀、糞便短鏈脂肪酸與飲食攝入：Hordaland健康研究3。</h3>
+      <p class="paper-title-en">Gastrointestinal symptoms, faecal short-chain fatty acids and dietary intake in older adults: the Hordaland Health Study 3.</p>
+      <p class="one-liner">在66-69歲老年人中，5.0%符合Rome IV標準的IBS，總糞便SCFAs濃度與便秘負相關（独立於飲食纖維、能量攝入、性別、BMI），男性SCFAs濃度較高，所有胃腸症狀與BMI正相關。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">66-69歲社區居住老年人（n=907，50.7%女性）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入，橫斷式觀察研究</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">有無GI症狀；男性vs女性；高vs低SCFAs</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">5.0%符合Rome IV IBS標準；總糞便SCFAs與便秘負相關（B=-0.006，p&lt;0.001）；SCFAs與腹瀉/鬆散便便正相關（但未經回歸調整後持續）；所有GI症狀與BMI增加正相關</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供老年人群中IBS罹患率（5.0%）與一般成人相近的重要流行病學數據，並首次在老年人中證實糞便SCFAs與便秘的獨立負相關，提示微生物代謝物可能是年齡相關GI功能變調的介入靶點，但為觀察性研究，尚未證明因果或干預效果。</p>
+      <div class="paper-tags"><span class="tag">aging</span><span class="tag">microbiome</span><span class="tag">SCFAs</span><span class="tag">constipation</span><span class="tag">diet</span><span class="tag">BMI</span><span class="tag">IBS prevalence</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42560563/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">3</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">3</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pain / Sensitization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Exercise / Lifestyle</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Sleep / Stress</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">gut-brain axis</span> <span class="keyword-chip">microbiota</span> <span class="keyword-chip">Firmicutes</span> <span class="keyword-chip">rTMS</span> <span class="keyword-chip">indole</span> <span class="keyword-chip">AhR</span> <span class="keyword-chip">SCFAs</span> <span class="keyword-chip">SIBO</span> <span class="keyword-chip">visceral pain</span> <span class="keyword-chip">older adults</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
