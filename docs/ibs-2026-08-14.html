@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年8月14日（週五）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年8月14日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年8月14日（週五）</p>
+    <div class="report-meta">
+      <span>📊 3 篇文獻</span>
+      <span>⭐ TOP 3 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日IBS研究聚焦於腸腦軸與心理因素的關聯（如焦慮與憂鬱）、腸道微生物叢失調（特別是Firmicutes降低）以及醫學學生群體中的流行率與生活習慣相關因素（如甜食攝取與考試焦慮），顯示出跨學科整合的研究趨勢，強調心理篩檢、微生物調節與生活方式干預在IBS管理中的重要性。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">解碼腸躁症中的腸腦軸：便秘型與腹瀉型亞型焦慮與憂鬱症狀的橫斷面分析</h3>
+      <p class="paper-title-en">Decoding the gut-brain axis in irritable bowel syndrome: a cross-sectional analysis of anxiety and depression symptoms in constipation and diarrhoea predominant subtypes.</p>
+      <p class="one-liner">研究發現IBS患者焦慮與憂鬱症狀中度相關，尤其在便秘型IBS中相關性最強，提示需常規心理健康篩檢與多學科管理。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">49名來自印尼Dr Saiful Anwar General Hospital的IBS患者（2023年1月至12月）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入，橫斷面觀察研究</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">按IBS亞型（IBS-C vs IBS-D）分組比較心理症狀</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">焦慮與憂鬱評分總體中度相關（r=0.503），IBS-C組相關性最強（r=0.613），IBS-D組中度（r=0.461）；人口統計學與IBS亞型無法獨立預測心理症狀</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>明確識別便秘型IBS患者焦慮-憂鬱共病風險最高，支持將心理篩檢納入常規IBS評估，特別是IBS-C患者，促進早期干預與多學科治療策略。</p>
+      <div class="paper-tags"><span class="tag">gut-brain axis</span><span class="tag">anxiety</span><span class="tag">depression</span><span class="tag">IBS-C</span><span class="tag">IBS-D</span><span class="tag">HADS</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42593005/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">腸躁症伴小腸細菌過度生長患者的糞便微生物叢分析</h3>
+      <p class="paper-title-en">Fecal microbiota profiling in patients with irritable bowel syndrome and small intestinal bacterial overgrowth.</p>
+      <p class="one-liner">研究發現IBS伴SIBO患者糞便微生物多樣性較無SIBO組低，Firmicutes減少與腹痛及症狀嚴重度負相關，提示微生物失調可能參與症狀機制。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">52名受試者，其中18名為正常對照組(NC)，其餘分為IBS伴SIBO+(IBS.SIBO+)和IBS不伴SIBO-(IBS.SIBO-)</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">葡萄糖氫氣呼吸測試診斷SIBO，16S rRNA基因定序分析糞便微生物叢</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">IBS.SIBO+ vs IBS.SIBO- vs NC，比較微生物豐富度、門檻與屬級組成及其與症狀的相關性</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">IBS.SIBO-組微生物豐富度顯著低於IBS.SIBO+組(p=0.012)；Firmicutes相對豐度在IBS伴SIBO組顯著下降；Firmicutes降低與腹痛(r=-0.436)、IBS症狀嚴重度(r=-0.494)負相關，與排便困難閾值正相關(r=0.458)</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供SIBO在IBS中微生物特徵的實證，特別是Firmicutes減少可能作為症狀的生物標誌線索，但尚未達到直接指導臨床干預（如益生菌或抗生素）的程度，需進一步驗證因果關係。</p>
+      <div class="paper-tags"><span class="tag">microbiome</span><span class="tag">SIBO</span><span class="tag">Firmicutes</span><span class="tag">dysbiosis</span><span class="tag">abdominal pain</span><span class="tag">16S rRNA</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42566575/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">波士尼亞與赫塞哥維納醫學學生中的腸躁症相關症狀流行率及相關因素</h3>
+      <p class="paper-title-en">Irritable bowel syndrome-related symptoms among medical students in Bosnia and Herzegovina.</p>
+      <p class="one-liner">近半數醫學學生符合IBS相關症狀標準，顯著與女性性別、每週≥4次甜食攝取及極高考試焦慮相關，提示學術壓力與飲食習慣是重要危險因子。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">176名來自薩拉熱佛及澤尼察大學的醫學學生（2022年11月至2023年12月）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">線上橫斷面調查，使用塞爾維亞語Rome III問卷評估IBS症狀，Westside測試焦慮量表評估焦慮</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">符合IBS症狀標準組 vs 不符合組，比較人口統計、飲食習慣與焦慮水準</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">84人(47.7%)符合Rome III IBS標準；症狀組女性佔89.3%顯著高於對照組(58.7%，p&lt;0.001)；每週≥4次甜食攝取在症狀組為63.1% vs 對照組48.9%(p=0.021)；極高考試焦慮在症狀組為14.3% vs 對照組1.1%(p&lt;0.001)</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>揭示高壓教育環境中IBS症狀的高發率及其與生活習慣（甜食）和心理因素（考試焦慮）的關聯，支持在學生健康服務中納入飲食教育與壓力管理干預，雖為自報橫斷面研究但具警示價值。</p>
+      <div class="paper-tags"><span class="tag">medical students</span><span class="tag">diet</span><span class="tag">sweets</span><span class="tag">test anxiety</span><span class="tag">Rome III</span><span class="tag">female predominance</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42592996/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pain / Sensitization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Sleep / Stress</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Exercise / Lifestyle</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">gut-brain axis</span> <span class="keyword-chip">Firmicutes</span> <span class="keyword-chip">SIBO</span> <span class="keyword-chip">test anxiety</span> <span class="keyword-chip">sweets consumption</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
