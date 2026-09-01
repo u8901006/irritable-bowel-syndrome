@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年9月1日（週二）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年9月1日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年9月1日（週二）</p>
+    <div class="report-meta">
+      <span>📊 9 篇文獻</span>
+      <span>⭐ TOP 5 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日 IBS 研究呈現多層面趨勢，核心聚焦於 comorbidity（尤以抑鬱）、心理社會因素（如童年經驗、壓力）、以及基層醫療中的實際管理挑戰。多篇研究引用 Rome Foundation 全球流行病學資料，證實疲勞與 alarm features 在 DGBI 中高度普遍，尤其伴隨多重診斷時負擔顯著增加。同時，基礎科學探討腸黏膜細胞（如 Enterochromaffin cells）如何整合微生物訊號調節血清素與腸蠕動，為未來外周標的治療提供機制支持。臨床方面，夜班工作者、初級照護環境中的 IBS 患者顯示更高症狀負擔與心理併發症，提醒需針對特殊人群進行篩檢與個人化介入。總體來看，研究正從單一症狀管理轉向整合生物、心理、社會因素的整體照護模式。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">合併憂鬱症對美國非機構化成人腸躁症患者經濟與人文負擔的影響</h3>
+      <p class="paper-title-en">Economic and humanistic burden of comorbid depression among individuals with irritable bowel syndrome in the non-institutionalized US adult population.</p>
+      <p class="one-liner">合併憂鬱症顯著增加 IBS 患者的醫療資源使用、功能限制、精神健康惡化及缺勤天數，提醒常規篩檢與併合治療的重要性。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">美國非機構化成人 IBS 患者（N=1,422,146，加權後）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷式觀察研究，比較有 vs 無合併憂鬱症）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無合併憂鬱症的 IBS 患者</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">醫療資源使用、醫療成本、功能限制、HRQoL（PCS/MCS）、缺勤天數</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>此研究提供強大實證證據，證明憂鬱症顯著加重 IBS 負擔，支持在初級照護中將憂鬱篩檢納入 IBS 常規評估，並強調雙重治療策略對減少醫療成本與提升生活品質的潛在效益。</p>
+      <div class="paper-tags"><span class="tag">comorbidity</span><span class="tag">depression</span><span class="tag">health economics</span><span class="tag">quality of life</span><span class="tag">work productivity</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42035802/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">全普羅基金會流行病學研究：一般人群與腸腦互動失調症個體中自我報告警報特徵的流行率</h3>
+      <p class="paper-title-en">Global Prevalence of Self-Reported Alarm Features in the General Population and Among Individuals With Disorders of Gut-Brain Interaction-Results From the Rome Foundation Global Epidemiology Study.</p>
+      <p class="one-liner">警報特徵（如腸道出血、體重下降）在一般人群中常見，但於 DGBI（特別是 IBS）患者中顯著更普遍，提醒臨床解讀時需納入較廣泛的腸腦失調脈絡，避免過度檢查。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">來自 26 個國家的 54,127 名參與者（Rome Foundation 全球流行病學研究），排除自報有機性胃腸疾病者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷式流行病學調查）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無 DGBI vs 有 DGBI（依 Rome IV 標準）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">14 項自我報告警報特徵的流行率及其關聯強度（OR）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>雖未提供直接治療建議，但此研究對臨床醫師具有重要啟示：警報特徵在功能性腸胃疾病中並非罕見，過度解讀可能導致不必要的侵入性檢查。應強化醫師對 DGBI 中警報特徵的解讀訓練，促進更精準的紹特徵與嚴重器官病변的區分。</p>
+      <div class="paper-tags"><span class="tag">alarm features</span><span class="tag">DGBI</span><span class="tag">Rome IV</span><span class="tag">epidemiology</span><span class="tag">diagnostic ambiguity</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42522864/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">腸腦互動失調症中疲勞的流行率與負擔：Rome Foundation 全球流行病學研究結果</h3>
+      <p class="paper-title-en">Prevalence and Burden of Fatigue Across Disorders of Gut-Brain Interaction: Results From the Rome Foundation Global Epidemiology Study.</p>
+      <p class="one-liner">疲勞在 DGBI 中極為普遍，尤其伴隨多重診斷時（如 IBS + FD）發生率最高，並與女性、肥胖、睡眠障礙、焦慮憂鬱及身體症狀負擔密切相關，提醒需納入常規評估。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">Rome Foundation 全球流行病學研究參與者（N=54,127，49% 女性，平均年齡 44 歲），依 DGBI 數量分組：無、單一、多重</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷式調查）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無 DGBI vs 一種 DGBI vs 多種 DGBI</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">疲勞流行率（由 PROMIS Global-10 及 PHQ-12 評估）、相關因素（經 logistic regression 分析）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>儘管為橫斷式研究無法論證因果，但疲勞在 IBS 中高達 39%（PROMIS）/53%（PHQ-12）的流行率，以及其與多重心理社會與身體因素的關聯，支持在 IBS 管理中常規篩檢疲勞，並考慮整合睡眠改善、壓力管理及抗抑鬱治療等多維度介入。</p>
+      <div class="paper-tags"><span class="tag">fatigue</span><span class="tag">DGBI</span><span class="tag">IBS</span><span class="tag">comorbidity</span><span class="tag">quality of life</span><span class="tag">Rome Foundation</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42206638/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.28s">
+      <div class="paper-header">
+        <span class="rank-badge">#4</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">腸躁症臨床照護缺口與基於外周內臟傳入神經調節的未來療法潛力</h3>
+      <p class="paper-title-en">Irritable Bowel Syndrome Clinical Care Gaps and the Potential of Future Therapeutics Based on Peripheral Visceral Afferent Modulation.</p>
+      <p class="one-liner">現行 IBS 治療多聚焦於腸道功能或中樞調節，但疼痛控制仍是最大未滿足需求；本文闡明外周內臟傳入神經（尤其 DRG 中的受體如 5-HT3、κ-opioid、GLP-1 等）為開發具周邊選擇性的止痛新藥提供有力機制基礎。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">IBS 患者（特別是伴隨內臟過敏者）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">針對 DRG 表達受體的藥物（基於前臨床與人體研究）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">現有療法（腸道藥物、中樞調節劑如抗憂鬱藥）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">減少內臟疼痛、訴求周邊作用以避免中樞副作用</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>雖以文獻評論為主，但該研究深入分析了未來治療方向，對臨床藥物開發具啟導性。強調周邊限制性藥物（不進入中樞）可降低嗜睡、成癮等風險，是未來 IBS 止痛藥研發的重要方向，值得臨床試驗與藥廠關注。</p>
+      <div class="paper-tags"><span class="tag">visceral hypersensitivity</span><span class="tag">DRG</span><span class="tag">peripheral neuromodulation</span><span class="tag">pain management</span><span class="tag">drug development</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/41974246/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.33999999999999997s">
+      <div class="paper-header">
+        <span class="rank-badge">#5</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">澳洲與英國夜班工作者中腸躁症與功能性消化不良的高流行率：橫斷面研究</h3>
+      <p class="paper-title-en">High Prevalence of Disorders of Irritable Bowel Syndrome and Functional Dyspepsia in Night Shift Workers: A Cross-Sectional Study in Australia and the United Kingdom.</p>
+      <p class="one-liner">夜班工作者 IBS 與 FD 流行率顯著高於一般人口（IBS 21.3%，FD 30.4%），且顯著影響生活品質與心理健康，提醒需針對此弱勢族群進行職場健康干預。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">澳洲與英國夜班工作者（≥8 次/月，23:00–03:00，N=392，69.9% 女性，中位年齡 48 歲）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷式觀察研究）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無 IBS/FD vs 有 IBS 和/或 FD</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">Rome IV 診斷、IBS 嚴重度 (IBS-SSS)、生活品質 (IBS-QoL)、心理症狀 (DASS-21)、診間不適 (LPDS)、內臟敏感度 (VSI)、用藥率</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>此研究識別出一個高風險但常被忽略的族群——夜班工作者，其 IBS/FD 流行率約為一般人口的 2–3 倍，並顯著影響工作與生活。結果強力支持制定針對性職場介入，如調整排班、提供胃腸健康教育、壓力管理資源及彈性就醫安排，具有明確的公共衛生與職業健康應用價值。</p>
+      <div class="paper-tags"><span class="tag">night shift work</span><span class="tag">circadian rhythm</span><span class="tag">IBS</span><span class="tag">functional dyspepsia</span><span class="tag">occupational health</span><span class="tag">quality of life</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/41308895/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">📚 其他相關文獻</div>
+    
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h4 class="paper-title-zh">腸黏膜細胞作為微生物訊號整合樞紐：調節腸道血清素與蠕動的合作機制</h4>
+      <p class="paper-title-en">Enterochromaffin cells as a cellular integration hub for cooperative microbial signaling to modulate gut serotonin and motility.</p>
+      <p class="one-liner">研究證明腸嗜鉻細胞（EC cells）可同時響應微生物代謝物（如 hypoxanthine 與 butyrate），透過離子通道與受體通路調節 5-HT 釋放與腸蠕動，揭示微生物–東醫–宿主互動的新機制。</p>
+      <div class="paper-tags"><span class="tag">enterochromaffin cells</span><span class="tag">serotonin</span><span class="tag">gut motility</span><span class="tag">microbial metabolites</span><span class="tag">gut-brain axis</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42636369/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h4 class="paper-title-zh">伴隨腸躁症樣症狀的炎腸病評估與管理共識：Rome Foundation 與 IOIBD 聯合建議</h4>
+      <p class="paper-title-en">Recommendations for the Evaluation and Management of Inflammatory Bowel Disease With Irritable Bowel Syndrome-Like Symptoms: A Joint Rome Foundation and International Organization for the Study of IBD (IOIBD) Consensus.</p>
+      <p class="one-liner">為緩解 IBD 緩解期卻持續腸躁症樣症狀（疼痛、腹瀉、脹氣）的診斷模糊，提出統一術語（“IBD with IBS-like symptoms”）、客觀排除活性發炎的評估流程，並推薦纖維、低 FODMAP、腦腦行為療法等安全療策。</p>
+      <div class="paper-tags"><span class="tag">IBD</span><span class="tag">IBS-like symptoms</span><span class="tag">Rome Foundation</span><span class="tag">IOIBD</span><span class="tag">clinical guidelines</span><span class="tag">brain-gut therapies</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42066865/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h4 class="paper-title-zh">初級照護中成人腸躁症患者的臨床與心理社會特徵：DOMINO 研究的事後分析</h4>
+      <p class="paper-title-en">Clinical and Psychosocial Characteristics of Adult Primary Care IBS Patients: A Post hoc Analysis of the DOMINO Study.</p>
+      <p class="one-liner">初級照護診斷的 IBS 患者中 70% 符合 Rome IV 標準，以腹瀉型及混合型為主，症狀中度至重度佔比超過 80%，並顯著伴隨焦慮、憂鬱與身體症狀負擔，提醒基層醫師需加強 psychosomatic 評估。</p>
+      <div class="paper-tags"><span class="tag">primary care</span><span class="tag">IBS subtypes</span><span class="tag">Rome IV</span><span class="tag">psychosocial comorbidity</span><span class="tag">IBS-SSS</span><span class="tag">quality of life</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42663160/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h4 class="paper-title-zh">逆境中的韌性：不良與良好童年經驗對腸躁症的影響</h4>
+      <p class="paper-title-en">Resilience in the face of adversity: Adverse and benevolent childhood experiences in irritable bowel syndrome.</p>
+      <p class="one-liner">良好童年經驗（BCE）具緩衝作用，可減輕不良童年經驗（ACE）對 IBS 風險的影響；高 ACE + low BCE 組別 IBS 風險近兩倍，而高 ACE + high BCE 則無顯著增加，支持早期生活心理社会保護因素在預防功能性腸胃疾病中的潛在角色。</p>
+      <div class="paper-tags"><span class="tag">adverse childhood experiences</span><span class="tag">benevolent childhood experiences</span><span class="tag">resilience</span><span class="tag">IBS etiology</span><span class="tag">psychosocial factors</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42119244/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">6</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:67%"></div>
+      </div>
+      <span class="topic-count">4</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Sleep / Stress</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">3</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pain / Sensitization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Exercise / Lifestyle</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">comorbid depression</span> <span class="keyword-chip">alarm features</span> <span class="keyword-chip">fatigue</span> <span class="keyword-chip">visceral afferent modulation</span> <span class="keyword-chip">night shift work</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
