@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年9月9日（週三）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年9月9日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年9月9日（週三）</p>
+    <div class="report-meta">
+      <span>📊 3 篇文獻</span>
+      <span>⭐ TOP 3 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日三篇文獻聚焦於腸道-大腸互動疾病的流行病學更新與腸道微生物代謝建模在糞便微生物移植中的應用。其中，Rome V 全球流行病學調查顯示 DGBI (Disorders of Gut-Brain Interaction) 的全球盛行率維持約 40.9%，與 Rome IV 一致；另一篇針對兒童人群的研究發現 DGBI 盛行率達 28.0%，顯示該疾病在兒童階段具有顯著負擔；最後一篇利用代謝組學建模預測 FMT 效果，提出代謝ニッチ互補性作為個人化供體選擇的潛在機制。總體而言，研究趨勢正從流行病學描述轉向機制探索與精準醫療應用，特別是在微生物代謝互作與跨年齡層流行病學方面。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">代謝組規模建模以評估微生物代謝互補性，應用於精準糞便微生物移植療法</h3>
+      <p class="paper-title-en">Metagenome-scale modeling to assess microbiome metabolic complementarity for precision microbiota transplantation therapies.</p>
+      <p class="one-liner">該研究利用代謝組模型預測供體與受體間代謝ニッチ互補性，發現代謝差異越大的供體在FMT後定植率越高，並可預測IBS-D/M患者短鏈脂肪酸、硫化物及氣體代謝的變化，支持其作為個人化供體篩選的依據。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">IBS-D/M 患者（人類試驗）及小鼠FMT模型；供體來自OpenBiome菌種庫</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">基於MICOM的代謝組規模模型，計算供體-受體代謝ニッチ互補性（代謝flux dissimilarity）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">代謝ニッチ互補性低 vs 高的供體；以留一法交叉驗證預測FMT後群落組成</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">代謝ニッチ互補性高的供體在小鼠中定植率顯著升高；在人類IBS試驗中能預測FMT後短鏈脂肪酸、硫代謝、氣體產生等疾病相關代謝路徑的變化</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供可驗證的機制框架，用於個人化FMT供體選擇，有潛力改善目前FMT治療IBS的反應率不一問題，屬轉化醫學領域的重要進展。</p>
+      <div class="paper-tags"><span class="tag">Microbiome</span><span class="tag">Metabolomics</span><span class="tag">Precision Medicine</span><span class="tag">FMT</span><span class="tag">IBS</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42683728/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">Rome V 全球流行病學與驗證調查：腸道-大腸互動疾病盛行率及與 Rome IV 研究的比較</h3>
+      <p class="paper-title-en">Rome V global epidemiology and validation survey: prevalence of disorders of gut-brain interaction and comparison with the Rome IV global epidemiology study.</p>
+      <p class="one-liner">全球15國28,771名成人網路調查顯示，依據Rome V標準，至少一種DGBI盛行率為40.9%，與Rome IV的40.5%幾乎相同，女性盛行率較高，隨年齡增加而下降。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">15個國家的28,771名成年人（網路樣本）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">使用Rome V診斷問卷進行人口基礎網路調查</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">與先前Rome IV全球流行病學研究結果比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">DGBI總盛行率為40.9%（Rome V） vs 40.5%（Rome IV）；最常見亞型為未分類腸道疾病（9.6%）、功能性 dyspepsia（8.1%）、IBS（8.5%）、功能性吞嚥困難（4.1%）、卵巢痛症（7.3%）；新增兩種疾病：腹偏頭痛（5.1%）、無嗝病症（1.4%）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>確認Rome V診斷標準的流行病學一致性，增強其作為全球診斷框架的效度，但對臨床決策或治療選擇的直接幫助有限，主要服務於流行病學監測與研究標準統一。</p>
+      <div class="paper-tags"><span class="tag">Gut-Brain Axis</span><span class="tag">Epidemiology</span><span class="tag">Rome V</span><span class="tag">DGBI</span><span class="tag">IBS</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42613194/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">多國兒童腸道-大腸互動疾病流行病學與負擔：Rome Foundation 兒童全球研究結果</h3>
+      <p class="paper-title-en">Multinational prevalence and burden of paediatric disorders of gut-brain interaction: results of the Rome Foundation paediatric global study.</p>
+      <p class="one-liner">來自中國、義大利、墨西哥和美國的8000名0-17歲兒童照護者調查顯示，28.0%的兒童至少患有一種DGBI，其中下腸道疾病最常見（23.7%），盛年齡越小發病率越高（0-3歲約41%），並顯著伴隨焦慮、抑鬱與功能障礙。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">中國、義大利、墨西哥和美國的8000名0-17歲兒童（由照護者報告）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">線上Rome V問卷評估胃腸症狀、疾病負擔及共病</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">按國家、性別、年齡分層分析盛行率與負擔</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">DGBI總盛行率：28.0%（95%CI：27.0–29.0%）；下腸道疾病為主（23.7%），其中排便與肛門疾病佔20.2%；上腸道疾病佔8.7%；盛行率隨年齡增長而下降；與焦慮、抑鬱、功能障礙、醫療使用及照顧者負擔顯著相關</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>首次提供多國標準化兒童DGBI流行病學數據，揭示其高盛行率、早起負擔及跨域影響，對兒童胃腸科篩查、早期介入及跨學科管理具有重要臨床與政策意義。</p>
+      <div class="paper-tags"><span class="tag">Pediatric IBS</span><span class="tag">Gut-Brain Axis</span><span class="tag">Epidemiology</span><span class="tag">Rome V</span><span class="tag">Child Health</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42613193/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">3</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Epidemiology</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:67%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Rome V Criteria</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:67%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Precision Medicine</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Metabolomics</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">FMT</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">Rome V</span> <span class="keyword-chip">DGBI</span> <span class="keyword-chip">FMT</span> <span class="keyword-chip">Metabolome-scale modeling</span> <span class="keyword-chip">Pediatric IBS</span> <span class="keyword-chip">Gut-brain axis</span> <span class="keyword-chip">Microbiome</span> <span class="keyword-chip">Precision microbiota transplantation</span> <span class="keyword-chip">Epidemiology</span> <span class="keyword-chip">Short-chain fatty acid</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
