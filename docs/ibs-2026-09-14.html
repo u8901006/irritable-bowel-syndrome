@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年9月13日（週日）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年9月13日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年9月13日（週日）</p>
+    <div class="report-meta">
+      <span>📊 4 篇文獻</span>
+      <span>⭐ TOP 4 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日IBS研究聚焦於流行病學更新與特殊人群探討，Rome V全球流行病學調查顯示DGBI總體患病率穩定約40.9%，與Rome IV一致，增強了診斷標準的可靠性；同時，中東北非地區醫學生IBS研究揭示心理共病（焦慮、抑鬱）與食物/藥物過敏史是嚴重型IBS的重要危險因子，提示此高壓人群需加篩與干預；此外，工程細胞外小囊體在腸靶向給藥中的前瞻性綜述雖未直接聚焦IBS，但提及其在功能性腸胃疾病中的潛力，為未來治療提供新方向；整體趨勢顯示研究正從確認負擔轉向機制闡釋與精準干預，特別是腸腦軸與心理社會因素的整合。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">Rome V 全球流行病學與驗證調查：腸腦互動疾病的患病率及與 Rome IV 全球流行病學研究的比較</h3>
+      <p class="paper-title-en">Rome V global epidemiology and validation survey: prevalence of disorders of gut-brain interaction and comparison with the Rome IV global epidemiology study.</p>
+      <p class="one-liner">Rome V 標準下全球至少一種 DGBI 的患病率為 40.9%，與 Rome IV 的 40.5% 高度一致，支持其診斷效度與全球負擔評估的穩定性。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">來自 15 個國家的 28,771 名成年人（一般人群）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">使用 Rome V 診斷問卷進行網路人口基礎調查</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">與先前 Rome IV 全球流行病學研究結果比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">Rome V 下 DGBI 總體患病率為 40.9%，女性較高、隨年齡增加而下降；最常見腸胃症候為未分類腸道疾病（9.6%），其次為便秘（8.9%）和 IBS（8.5%）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供目前最具代表性的全球 DGBI 流行病學基準數據，臨床與政策制定者可用來評估疾病負擔、分配資源及驗證診斷標準的一致性，對提升 IBS 及相關疾病的認識與照護具有基礎性價值。</p>
+      <div class="paper-tags"><span class="tag">Gut-Brain Axis</span><span class="tag">Epidemiology</span><span class="tag">Diagnostic Criteria</span><span class="tag">Rome V</span><span class="tag">Global Health</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42613194/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">中東及北非地區醫學生腸躁症嚴重程度及其相關因素：多中心橫斷面研究</h3>
+      <p class="paper-title-en">Severity of irritable bowel syndrome and its correlates among Middle East and North African medical students: a multicentric cross sectional study.</p>
+      <p class="one-liner">在 MENA 地區醫學生中，超過半數 IBS 患者有中度至重度症狀，焦慮與抑鬱顯著增加重症 IBS 風險（aPR 約 1.86–1.87），食物/藥物過敏史亦為獨立危險因子。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">來自七個 MENA 國家 27 所醫學院、經 Rome IV 確診的醫學生（有 IBS）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷面觀測研究）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同症狀嚴重程度組（緩解、輕度、中度、重度）間的比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">重度 IBS 與較高年齡、超重/肥胖、陽性憂鬱（aPR 1.86）、焦慮（aPR 1.87）及食物或藥物過敏史（aPR 1.29）顯著相關；16.73% 為重度症狀</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>針對高壓學術人群提供具區域特色的風險因子識別，有助於在大學醫學院實施針對性心理篩查與生活方式干預，但因僅限於醫學生樣本，推廣至一般青年族群需謹慎。</p>
+      <div class="paper-tags"><span class="tag">Gut-Brain Axis</span><span class="tag">Psychological Comorbidity</span><span class="tag">Medical Students</span><span class="tag">MENA Region</span><span class="tag">Risk Factors</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42717224/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">多國小兒腸腦互動疾病流行病學與負擔：Rome 基金會小兒全球研究結果</h3>
+      <p class="paper-title-en">Multinational prevalence and burden of paediatric disorders of gut-brain interaction: results of the Rome Foundation paediatric global study.</p>
+      <p class="one-liner">全球 0-17 歲兒童中，約 28.0% 患有兒童 DGBI，下消化道疾病為主（特別是排便與肛門疾病 20.2%），隨年齡增長患病率下降，並伴隨顯著的心理與社會負擔。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">來自中國、義大利、墨西哥和美國、年齡 0-17 歲的 8000 名兒童（由照護者回報）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">使用 Rome V 診斷問卷進行線上調查</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">依國家、性別、年齡層與 DGBI 亞類型分層分析</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">兒童 DGBI 總患病率 28.0%，下消化道為 23.7%（以排便/肛門疾病最常見），上消化道為 8.7%；患病率隨年齡下降（0-3 歲 約 41% → 青少年 22%），並與焦慮、抑鬱、功能障礙及醫療資源使用顯著相關</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供首個大規模多國兒童 DGBI 流行病學數據，凸显早期識別與干預的必要性，尤其提示心理共病與家庭負擔的重要性，對小兒腸胃科及全科醫師具有指導意義，但非聚焦於 IBS 特定亞型。</p>
+      <div class="paper-tags"><span class="tag">Pediatric IBS</span><span class="tag">Gut-Brain Axis</span><span class="tag">Epidemiology</span><span class="tag">Burden of Illness</span><span class="tag">Rome V</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42613193/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.28s">
+      <div class="paper-header">
+        <span class="rank-badge">#4</span>
+        <span class="journal-badge"></span>
+        <span class="utility-badge" style="background:#8a7a6a">低實用</span>
+      </div>
+      <h3 class="paper-title-zh">工程細胞外小囊體用於結腸靶向給藥：微環境響應設計、治療機制與臨床轉化</h3>
+      <p class="paper-title-en">Engineering Small Extracellular Vesicles for Colon-Targeted Delivery: Microenvironment-Responsive Design, Therapeutic Mechanisms, and Clinical Translation.</p>
+      <p class="one-liner">此探討結腸靶向小胞外囊體（sEVs）的工程策略的文獻綜述，雖主要聚焦於炎腸病與結直腸癌，但提及其在腸躁症等功能性腸胃疾病中的潛在應用，涉及屏障修復、免疫調節及巨噬細胞極化等機制。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">結腸疾病模式（IBD、CRC、潛在 IBS）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">工程細胞外小囊體（sEVs）的結腸靶向遞送系統</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">與傳統結腸靶向給藥系統（如納米粒子、 liposomes）進行比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">sEVs 具備生物相容性、可修飾表面及響應微環境（pH、酶、ROS、受體）的優勢，但在 IBS 中仍屬探索階段，需驗證安全性、製造一致性與臨床端點</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>雖提出創新納米遞送平台，但目前僅處於前臨床與早期概念驗證階段，尚無 IBS 特定的臨床試證據，製造標準化與 regulatory 路徑不明確，短期內臨床適用性有限，屬基礎與轉化醫學探索。</p>
+      <div class="paper-tags"><span class="tag">Drug Delivery</span><span class="tag">Nanotechnology</span><span class="tag">Extracellular Vesicles</span><span class="tag">Colon Targeting</span><span class="tag">IBS (Emerging)</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42732298/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">4</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Epidemiology</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:75%"></div>
+      </div>
+      <span class="topic-count">3</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Risk Factors / Biomarkers</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Drug Delivery / Nanotechnology</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diagnostic Criteria</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Exercise / Lifestyle</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pain / Sensitization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Sleep / Stress</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">Rome V</span> <span class="keyword-chip">IBS severity</span> <span class="keyword-chip">medical students</span> <span class="keyword-chip">anxiety</span> <span class="keyword-chip">depression</span> <span class="keyword-chip">food hypersensitivity</span> <span class="keyword-chip">pediatric DGBI</span> <span class="keyword-chip">extracellular vesicles</span> <span class="keyword-chip">colon-targeted delivery</span> <span class="keyword-chip">gut-brain axis</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
