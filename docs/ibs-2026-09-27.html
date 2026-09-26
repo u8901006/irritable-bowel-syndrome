@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年9月26日（週六）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年9月26日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年9月26日（週六）</p>
+    <div class="report-meta">
+      <span>📊 3 篇文獻</span>
+      <span>⭐ TOP 3 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日三篇文獻均聚焦於腸躁症（IBS）的腸道微生物與飲食干預，尤其強調腸道菌群與腸腦軸在情緒調節與腸道症狀中的關聯。其中一篇系統綜述指出地中海飲食與植物性飲食模式可提升短鏈脂肪酸產生菌群，改善腸道屏障並降低炎症，為 IBS 與炎腸病（IBD）提供最有益的飲食策略；另一篇隨機對照試驗顯示，在低 FODMAP 飲食基礎上補充特定膳食纖維混合物（ur gut®）可增加抗性澱粉攝取、改變腸道菌群組成（如 Ruminococcus E 增長 5.5 倍），並改善胃腸道特定焦慮與生活品質的性方面，但未顯著影響睡眠或糞便/血液生物標誌物；第三篇機制研究則揭示共生菌 Alistipes shahii 的缺失導致 indole 生成減少，干擾海馬迴 indole-AhR 訊號傳導，進而引發焦慮與憂鬱行為，為 IBS 患者的情緒症狀提供腸源性分子機制。整體趨勢顯示研究正從單一症狀緩解轉向調節腸道微生物生態與腸腦軸雙向交流，以實現更全面的個人化治療。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">飲食模式、腸道微生物與胃腸道疾病：對腸躁症與炎腸病病機的機制性見解</h3>
+      <p class="paper-title-en">Dietary patterns, gut microbiota, and gastrointestinal disorders: mechanistic insights into irritable bowel syndrome and inflammatory bowel disease.</p>
+      <p class="one-liner">此系統綜述指出地中海與植物性飲食模式能促進有益短鏈脂肪酸產生菌群增殖，改善腸道屏障並降低炎症，是 IBS 與 IBD 最有利的飲食策略，而西式飲食與低 FODMAP 飲食則分別伴隨菌群失調或僅提供短期症狀緩解。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">患有腸躁症（IBS）或炎腸病（IBD）的個體</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">地中海飲食、植物性飲食、低 FODMAP 飲食、西式飲食、超加工食品、生酮飲食等飲食模式</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同飲食模式間的對比（如地中海飲食 vs 西式飲食）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">腸道微生物組成（如 Faecalibacterium prausnitzii、Roseburia、Bifidobacterium 增長；Akkermansia muciniphila 減少）、短鏈脂肪酸產生、腸道屏障完整性、系統性炎症、臨床症狀及生活品質</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>此文為高質量系統綜述，整合了大量人類與動物研究證據，明確指出地中海飲食為 IBS 與 IBD 的最佳飲食模式，具直接臨床指導價值，可作為營養諮詢的核心依據，且強調未來需結合微生物檢測的 RCT 以推動個人化營養策略，具前瞻性與可執行性。</p>
+      <div class="paper-tags"><span class="tag">Diet / Nutrition</span><span class="tag">Microbiome</span><span class="tag">Gut-Brain Axis</span><span class="tag">Inflammation</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42448648/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">膳食纖維混合物改善低 FODMAP 飲食後腸躁症患者的腸道健康：隨機雙盲對照試驗</h3>
+      <p class="paper-title-en">Dietary fibre blend improves gut health in patients with irritable bowel syndrome following a low FODMAP diet: a randomised, double-blind control trial.</p>
+      <p class="one-liner">在已遵循低 FODMAP 飲食的 IBS 患者中，補充 ur gut® 膳食纖維混合物 3 週可顯著增加抗性澱粉攝取、改變腸道菌群（Ruminococcus E 增長 5.5 倍）、降低胃腸道特定焦慮並改善生活品質性方面，而不影響睡眠或症狀控制。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">成人腸躁症患者（n=26，其中 3 人為男性），已完成 1 週基線期低 FODMAP 飲食</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">ur gut® 膳食纖維混合物補充劑，持續 3 週</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">安慰劑對照組（n=13）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">能量與蛋白質攝取下降；抗性澱粉攝取增加；腸道菌群屬級組織結構改變（P&lt;0.01）；Ruminococcus E 增長 5.5 倍；胃腸道特定焦慮減少（P=0.01）；生活品質性方面改善（P&lt;0.05）；無顯著影響於睡眠、糞便或血液生物標誌物</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>此試驗為小樣本（n=26） pilot 研究，雖設計嚴謹（隨機、雙盲、對照），並示出腸道菌群與心理症狀的改善，但樣本小、缺乏長期追蹤、未測量核心腸道症狀變化（僅報告維持穩定），且干預物為特定商業製劑（ur gut®），推廣性有限。然而，其證明在低 FODMAP 飲食後補充纖維可修復其對菌群的潛在負面影響，具備整合營養策略的臨床啟發價值。</p>
+      <div class="paper-tags"><span class="tag">Diet / Nutrition</span><span class="tag">Microbiome</span><span class="tag">Gut-Brain Axis</span><span class="tag">Psychological Treatment</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42782339/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge">未提供</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">indole-AhR 訊號傳導塑造情緒調節</h3>
+      <p class="paper-title-en">Indole-AhR signaling shapes emotional regulation.</p>
+      <p class="one-liner">此研究揭示共生菌 Alistipes shahii 缺失導致 indole 生成減少，阻斷海馬迴 indole-AhR 訊號傳導，進而引發焦慮與憂鬱行為，為腸躁症患者情緒症狀提供腸源性分子機制。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">腸躁症患者及其滑鼠模型</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">Alistipes shahii 共生菌的缺失（或 indole 生成減少）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">具有正常 Alistipes shahii 與 indole 產生能力的對照組</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">海馬迴 indole-AhR 訊號傳導減少；焦慮與憂鬱様行為增加</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>此研究提供了腸腦軸的精準分子機制（indole-AhR 通路），具有高科學價值，但目前僅在動物模型與少數人類樣本中觀察到關聯，尚未驗證補充 indole 或 Alistipes shahii 是否能改善 IBS 患者的情緒症狀，缺乏直接臨床介入證據。因此臨床實用性目前為中等，屬於基礎研究為未來開發益生菌、後生元或飲食干預（如富含 tryptophane 食物）奠定理論基礎。</p>
+      <div class="paper-tags"><span class="tag">Gut-Brain Axis</span><span class="tag">Microbiome</span><span class="tag">Psychological Treatment</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42678806/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">3</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">3</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:67%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:67%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Inflammation</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Mechanistic Research</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Trial</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Review</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">腸腦軸</span> <span class="keyword-chip">腸道微生物</span> <span class="keyword-chip">indole-AhR</span> <span class="keyword-chip">地中海飲食</span> <span class="keyword-chip">低 FODMAP</span> <span class="keyword-chip">膳食纖維</span> <span class="keyword-chip">Alistipes shahii</span> <span class="keyword-chip">Ruminococcus E</span> <span class="keyword-chip">短鏈脂肪酸</span> <span class="keyword-chip">胃腸道焦慮</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
