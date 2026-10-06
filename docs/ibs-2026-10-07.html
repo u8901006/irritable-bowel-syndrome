@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年10月6日（週二）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年10月6日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年10月6日（週二）</p>
+    <div class="report-meta">
+      <span>📊 14 篇文獻</span>
+      <span>⭐ TOP 6 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日 IBS 文獻聚焦於腸腦軸機制與多因素治療策略，強調微生物叢失調、膽酸代謝、飲食介入（如地中海飲食、益生菌合併利福昔黴素）及腸腦行為治療的療效。兒童及功能性惡心相關研究顯示出症狀共聚現象，反映腸胃症狀與心理共病的緊密關聯。保險授權障礙與植物療法效益評估則凸顯臨床實施中的系統性挑戰與補充療法的潛力。總體來看，個體化、機制導向的精準醫學正成為發展趨勢。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">益生菌合併利福昔黴素的固化治療可預防腸躁症腹瀉型（IBS-D）患者在利福昔黴素有效反應後復發：多中心隨機對照試驗</h3>
+      <p class="paper-title-en">Consolidation Therapy of Probiotics With Rifaximin Prevent Relapse in Rifaximin-Responsive Diarrhea-Predominant Irritable Bowel Syndrome: A Multicenter Randomized Clinical Trial</p>
+      <p class="one-liner">在利福昔黴素初步有效的 IBS-D 患者中，補充使用 Medilac-S（含枯草桿菌與糞腸球菌）4 週可顯著降低復發率並改善排便頻率與狀態。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">對利福昔黴素 2 週治療有臨床完全反應的腸躁症腹瀉型（IBS-D）患者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">利福昔黴素後續接受 Medilac-S（枯草桿菌 + 糞腸球菌）固化療法 4 週</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">僅接受利福昔黴素，無額外固化治療</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">主要：復發率；次要：IBS 嚴重度評分、生活品質、排便頻率/狀態、腸道微生物叢變化、不良反應</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供具體、可操作的復發預防策略，基於高品質 RCT 證據，直接支援臨床決策，尤其對於目前缺乏長期維持療法的 IBS-D 患者具高實用價值。</p>
+      <div class="paper-tags"><span class="tag">Microbiome</span><span class="tag">Pharmacotherapy</span><span class="tag">Probiotics</span><span class="tag">Relapse Prevention</span><span class="tag">IBS-D</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42609157/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">胃腸道感染期間使用抗生素會增加發展為腸躁症的風險：系統性文獻回顧與Meta分析</h3>
+      <p class="paper-title-en">Antibiotic Use During Gastrointestinal Infections Increases the Risk of Developing Irritable Bowel Syndrome: A Systematic Review and Meta-Analysis</p>
+      <p class="one-liner">抗生素使用，特別是胃腸道感染後，顯著增加後續發展 IBS 的風險（IRR 1.71），支持腸道微生物叢擾亂為關鍵致病機制。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">具有紀錄抗生素暴露 vs 無抗生素暴露的患者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">胃腸道感染期間使用抗生素</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">未使用抗生素的對照組</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">新發 IBS 的發生率（每千人年）與發生率比值（IRR）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>透過大規模數據（n&gt;420,000）證實抗生素（特別是胃腸道使用）為 IBS 可預防的危險因子，具重要公共衛生與臨床預防意義，可指導抗生素使用謹慎性。</p>
+      <div class="paper-tags"><span class="tag">Microbiome</span><span class="tag">Risk Factor</span><span class="tag">Post-Infection IBS</span><span class="tag">Antibiotics</span><span class="tag">Gut-Brain Axis</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/41860116/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">與腸躁症相關的臨床及腸外因素：病例對照研究</h3>
+      <p class="paper-title-en">Clinical and extra-intestinal factors associated with irritable bowel syndrome: A case-control study</p>
+      <p class="one-liner">透過整合六項腸外因素（如焦慮、偏頭痛、藥物過敏、PPI 使用等）開發出臨床評分工具，對 IBS 的敏感度達 80.4%、特異度 73.6%，提供實用篩選輔助。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">109 名參與者（IBS 病例 vs 對照）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（觀察性研究）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">IBS 病例 vs 健康對照</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">透過多變項 Logistic 回歸建立之 IBS 臨床評分模型的敏感度與特異度</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>雖未在初級保健中驗證，但該評分工具將心理、神經及用藥史納入評估，有助於提升臨床醫師對 IBS 的疑思與早期識別，具整合醫學價值。</p>
+      <div class="paper-tags"><span class="tag">Clinical Diagnosis</span><span class="tag">Psychological Comorbidity</span><span class="tag">Extra-intestinal Factors</span><span class="tag">Risk Score</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42641543/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.28s">
+      <div class="paper-header">
+        <span class="rank-badge">#4</span>
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">遵循地中海飲食預測腸躁症患者胃腸與焦慮症狀的改善</h3>
+      <p class="paper-title-en">Adherence to a Mediterranean Diet Predicts Gastrointestinal and Anxiety Symptom Response in Irritable Bowel Syndrome</p>
+      <p class="one-liner">在伴有焦慮或憂鬱的 IBS 患者中，地中海飲食（富含全穀物、蔬菜、豆類、魚類與橄欖油）可同時改善胃腸及心理症狀，提示其透過調節腸道微生物叢發揮雙重療效。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">59 名伴有焦慮或憂鬱症狀的 IBS 患者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">6 週地中海飲食介入</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">習慣飲食對照組</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">胃腸症狀嚴重度與心理症狀（焦慮/憂鬱）的改善</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>證實地中海飲食為低 FODMAP 之外的可行飲食選擇，尤其適用於有心理共病的 IBS 患者，具長期安全性與全身健康益處，適合作為生活方式介入的一線選項。</p>
+      <div class="paper-tags"><span class="tag">Diet / Nutrition</span><span class="tag">Microbiome</span><span class="tag">Psychological Treatment</span><span class="tag">Gut-Brain Axis</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/41325894/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.33999999999999997s">
+      <div class="paper-header">
+        <span class="rank-badge">#5</span>
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">功能性惡心不僅是惡心：兒童與青年多中心橫斷面研究</h3>
+      <p class="paper-title-en">Functional Nausea Is Not Just Nausea: A Multi-Center, Cross-Sectional Study of Children and Young Adults</p>
+      <p class="one-liner">兒童功能性惡心（FN）幾乎皆伴有腹痛、焦慮與憂鬱，且常併發功能性消化不良及 IBS，提示其屬於腸腦相互作用失調（DGBI）的廣泛表現，而非孤立症狀。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">8–21 歲，符合 Rome IV DGBI 標準的兒童與青年（n=292）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（橫斷面觀察）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">功能性惡心 (FN) vs 非FN 的 DGBI 患者；FN vs IBS 患者</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">惡心Severity、腹痛指數、焦慮、憂鬱、躰健康、功能障礙及共病率</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>強調在評估兒童慢性惡心時必須審視腸胃及心理共病，避免漏診 IBS 或功能性消化不良，具臨床審視提醒價值，特別適用於兒科與胃腸科。</p>
+      <div class="paper-tags"><span class="tag">Pediatric IBS</span><span class="tag">Psychological Comorbidity</span><span class="tag">Functional Nausea</span><span class="tag">DGBI</span><span class="tag">Somatization</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42823909/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.4s">
+      <div class="paper-header">
+        <span class="rank-badge">#6</span>
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">腸躁症腹瀉型與便秘型在血膽酸-腸道微生物叢軸上的差異</h3>
+      <p class="paper-title-en">Differences in the Plasma Bile Acid-Gut Microbiota Axis Between IBS-D and IBS-C</p>
+      <p class="one-liner">IBS-D 患者血中總膽酸升高、再吸收減少，並伴有 Ruminococcus 與 Clostridium 減少；IBS-C 則呈現相反改變，提示膽酸代謝失調是兩種亞型分化的關鍵機制。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">IBS-D、IBS-C 與健康對照 (HCs) 參與者</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（觀察性研究）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">IBS-D vs HCs；IBS-C vs HCs；IBS-D vs IBS-C</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">血漿膽酸種類（總、初級、次級、結合、非結合）；糞便微生物叢組成（16S rRNA sequencing）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供生物學上可區分 IBS-D 與 IBS-C 的機制依據，有助於未來開發針對膽酸代謝（如膽酸 sequestrants 或 Farnesoid X受體調節劑）的精準療法，但目前仍屬基礎研究階段。</p>
+      <div class="paper-tags"><span class="tag">Bile Acids</span><span class="tag">Microbiome</span><span class="tag">IBS-D</span><span class="tag">IBS-C</span><span class="tag">Gut-Brain Axis</span><span class="tag">Metabolomics</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42613095/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">📚 其他相關文獻</div>
+    
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h4 class="paper-title-zh">腸躁症</h4>
+      <p class="paper-title-en">Irritable bowel syndrome.</p>
+      <p class="one-liner">對 IBS 的流行病學、病理生理（腸腦軸失調）、診斷（Rome V）及治療原則（個體化、階梯式）作全面綜述，為理解該疾病提供現代框架。</p>
+      <div class="paper-tags"><span class="tag">Gut-Brain Axis</span><span class="tag">Clinical Guidelines</span><span class="tag">Pathophysiology</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42823420/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h4 class="paper-title-zh">兒童腸腦相互作用失調相關腹痛疾病的最新進展</h4>
+      <p class="paper-title-en">What is new in abdominal pain-related disorders of the gut-brain interaction in children.</p>
+      <p class="one-liner">兒童功能性腸胃疾病（含 IBS）的診斷工具更新、雙生心理社會模型重視程度增加，以及 2025 年 ESPGHAN/NASPGHAN 指南提供循證治療建議，但仍需更多高品質兒童試驗。</p>
+      <div class="paper-tags"><span class="tag">Pediatric IBS</span><span class="tag">Clinical Guidelines</span><span class="tag">Biopsychosocial Model</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42560138/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#8a7a6a">低實用</span>
+      </div>
+      <h4 class="paper-title-zh">耳道神經調節療法在兒童腸腦相互作用失調中的保險授權經驗：三級醫院研究</h4>
+      <p class="paper-title-en">Insurance Authorizations in Pediatric Disorders of Gut-Brain Interaction Treated With Auricular Neuromodulation: A Tertiary Center Experience.</p>
+      <p class="one-liner">儘管耳道經皮電神經場刺激（PENFS）獲 FDA 核准用於 IBS 相關功能性腹痛，但私人保險較公保更易拒絕事前授權，導致治療延遲與不公平可及性，雖未影響最終療效。</p>
+      <div class="paper-tags"><span class="tag">Pediatric IBS</span><span class="tag">Neuromodulation</span><span class="tag">Healthcare Access</span><span class="tag">Insurance Barrier</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42704331/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#8a7a6a">低實用</span>
+      </div>
+      <h4 class="paper-title-zh">糞便微生物移植（FMT）對改善腸躁症症狀之效果：隨機對照試驗的系統回顧與Meta分析</h4>
+      <p class="paper-title-en">Fecal Microbiota Transplantation for Symptom Improvement in Patients With Irritable Bowel Syndrome: Systematic Review and Meta-Analysis of Randomized Controlled Trials.</p>
+      <p class="one-liner">FMT 在 IBS symptom 改善上總體證據不確定（very low certainty），但在按 Rome IV 診斷或單次給藥的 subgroup 中顯示獲益，提示特定族群或給藥方式可能更有效。</p>
+      <div class="paper-tags"><span class="tag">Microbiome</span><span class="tag">FMT</span><span class="tag">Treatment</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42162772/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h4 class="paper-title-zh">植物性療法在腸躁症中的效果與安全性：系統文獻回顧與Meta分析</h4>
+      <p class="paper-title-en">Systematic Review and Meta-Analysis: Plant-Based Therapy for Irritable Bowel Syndrome.</p>
+      <p class="one-liner">薄荷油與中草藥顯示較安慰劑更佳療效且安全性良好，膳食纖維接近顯著，但整體研究品質有限，亟需更大規模 RCT 證實其在 IBS 治療中的定位。</p>
+      <div class="paper-tags"><span class="tag">Pharmacotherapy</span><span class="tag">Herbal Medicine</span><span class="tag">Diet / Nutrition</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42572206/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h4 class="paper-title-zh">在緩解期炎腸病且伴有類似 IBS 症狀的患者中篩選迴避/限制性進食障礙（ARFID）的風險</h4>
+      <p class="paper-title-en">Screening of Avoidance/Restrictive Food Intake Disorder (ARFID) in Patients with Quiescent Inflammatory Bowel Disease and Irritable Bowel Syndrome-Like Symptoms.</p>
+      <p class="one-liner">約四分之一緩解期 IBD 患者被篩選為 ARFID 風險陽性，其與較低 FODMAP 攝入及焦慮顯著相關，提示過度飲食限制可能導致進食障礙。</p>
+      <div class="paper-tags"><span class="tag">Diet / Nutrition</span><span class="tag">Psychological Comorbidity</span><span class="tag">ARFID</span><span class="tag">IBD-IBS Overlap</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42329518/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#8a7a6a">低實用</span>
+      </div>
+      <h4 class="paper-title-zh">功能性身體綜合徵、內化性疾病與免疫介導疾病之間的共享遺傳風險：雙胞胎-兄弟姊妹研究</h4>
+      <p class="paper-title-en">Shared genetic risk between functional somatic syndromes, internalizing disorders, and immune-mediated diseases: a twin-sibling study.</p>
+      <p class="one-liner">IBS 與免疫介導疾病具 modest 但顯著的共享遺傳相關（rA 0.19–0.29），支持其部分病因可能涉及免疫調節異常，而非純粹腸腦功能失調。</p>
+      <div class="paper-tags"><span class="tag">Genetics</span><span class="tag">Immune System</span><span class="tag">Comorbidity</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42190845/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card other-paper">
+      <div class="paper-header">
+        <span class="journal-badge">未提供（需補充）</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h4 class="paper-title-zh">迷走神經刺激治療慢性便秘：隨機對照試驗的系統回顧與Meta分析</h4>
+      <p class="paper-title-en">Vagal Nerve Stimulation for Chronic Constipation: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.</p>
+      <p class="one-liner">經皮耳部迷走神經刺激（taVNS）與經穴電刺激（TEA）可顯著改善便秘症狀（排便頻率、BSFS、IBS-SSS），但對焦慮或憂鬱無影響，支持其作為腸道運動調節的潛在療法。</p>
+      <div class="paper-tags"><span class="tag">Neuromodulation</span><span class="tag">IBS-C</span><span class="tag">Treatment</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/41762189/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">6</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">6</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:67%"></div>
+      </div>
+      <span class="topic-count">4</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:67%"></div>
+      </div>
+      <span class="topic-count">4</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:67%"></div>
+      </div>
+      <span class="topic-count">4</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">3</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Neuromodulation</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">IBS-D</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">IBS-C</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Comorbidity</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:33%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Risk Factor</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Bile Acids</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">FMT</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Herbal Medicine</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">ARFID</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Genetics</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Immune System</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Relapse Prevention</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Extra-intestinal Factors</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Diagnosis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Somatization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Healthcare Access</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Insurance Barrier</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:17%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">gut-brain axis</span> <span class="keyword-chip">microbiome</span> <span class="keyword-chip">rifaximin</span> <span class="keyword-chip">probiotics</span> <span class="keyword-chip">mediterranean diet</span> <span class="keyword-chip">functional nausea</span> <span class="keyword-chip">bile acids</span> <span class="keyword-chip">IBS-D</span> <span class="keyword-chip">IBS-C</span> <span class="keyword-chip">pediatric IBS</span> <span class="keyword-chip">psychological comorbidity</span> <span class="keyword-chip">dietary intervention</span> <span class="keyword-chip">fecal microbiota transplantation</span> <span class="keyword-chip">plant-based therapy</span> <span class="keyword-chip">insurance authorization</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
