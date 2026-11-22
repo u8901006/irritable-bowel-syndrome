@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IBS 文獻日報 · 2026年11月22日（週日）</title>
+<meta name="description" content="腸躁症（IBS）每日研究文獻自動摘要報告 - 2026年11月22日">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --surface: #fffaf2;
+    --line: #d8c5ab;
+    --text: #2b2118;
+    --muted: #766453;
+    --accent: #8c4f2b;
+    --accent-soft: #ead2bf;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 40px; }
+  .header { text-align: center; margin-bottom: 40px; animation: fadeDown 0.6s ease; }
+  .logo { font-size: 52px; margin-bottom: 12px; }
+  h1 { font-size: 26px; color: var(--text); margin-bottom: 4px; font-weight: 700; }
+  .date-line { color: var(--accent); font-size: 15px; font-weight: 500; }
+  .report-meta { display: flex; justify-content: center; gap: 16px; color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  .section { margin-bottom: 48px; animation: fadeUp 0.6s ease both; }
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    padding-bottom: 10px; margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .summary-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px; margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+  }
+  .summary-card p { font-size: 15px; line-height: 1.8; }
+
+  .paper-card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(61,36,15,0.06);
+    animation: fadeUp 0.6s ease both;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(61,36,15,0.1); }
+  .top-pick { border-left: 4px solid var(--accent); }
+  .other-paper { border-left: 4px solid var(--line); }
+
+  .paper-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .rank-badge {
+    background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .journal-badge {
+    background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500;
+    padding: 2px 10px; border-radius: 20px;
+  }
+  .utility-badge {
+    color: #fff; font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  .paper-title-zh { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+  .paper-title-en { font-size: 13px; color: var(--muted); margin-bottom: 10px; font-style: italic; line-height: 1.4; }
+  .one-liner { font-size: 14px; line-height: 1.7; margin-bottom: 14px; }
+
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .pico-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; }
+  .pico-label {
+    background: var(--accent); color: #fff; font-weight: 700;
+    min-width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+    flex-shrink: 0;
+  }
+  .pico-text { line-height: 1.5; }
+
+  .utility-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: rgba(140,79,43,0.05); border-radius: 8px; }
+
+  .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag {
+    background: rgba(140,79,43,0.08); color: var(--accent); font-size: 12px;
+    padding: 2px 10px; border-radius: 12px; font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-block; color: var(--accent); font-size: 13px;
+    text-decoration: none; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .paper-link:hover { color: var(--text); }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .topic-name { min-width: 140px; font-size: 13px; text-align: right; color: var(--muted); }
+  .topic-bar-container { flex: 1; height: 20px; background: rgba(140,79,43,0.08); border-radius: 10px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 10px; transition: width 0.6s ease; }
+  .topic-count { min-width: 24px; font-size: 13px; font-weight: 600; color: var(--accent); }
+
+  .keywords-section { text-align: center; }
+  .keyword-chip {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    margin: 4px; font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--line); text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 500;
+    padding: 8px 16px; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 24px; transition: all 0.2s;
+  }
+  .footer-link:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .footer-text a { color: var(--muted); text-decoration: none; }
+  .footer-text a:hover { color: var(--accent); }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 24px; }
+    .pico-grid { grid-template-columns: 1fr; }
+    .topic-name { min-width: 100px; font-size: 12px; }
+    .footer-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="logo">🫁</div>
+    <h1>IBS 文獻日報</h1>
+    <p class="date-line">2026年11月22日（週日）</p>
+    <div class="report-meta">
+      <span>📊 4 篇文獻</span>
+      <span>⭐ TOP 4 篇精選</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-title">📋 每日趨勢總結</div>
+    <div class="summary-card">
+      <p>今日文獻聚焦於腸躁症（IBS）及腸腦互動疾病（DGBI）的宏觀病理機制與創新療法。頂尖期刊發表綜述闡述IBS流行病學、腸腦軸病理機制及分級治療策略；另一篇綜述肯定經皮電神經場刺激（PENFS）作為非侵入性神經調控療法的療效與安全性。大規模全球病毒組研究揭示IBS亞型特異性病毒特徵及其功能基因與神經傳遞物質代謝的關聯。紐西蘭視點文章則凸顯當地流行病學數據缺口及巨大的未被量化醫療經濟負擔。</p>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-title">⭐ TOP 精選論文</div>
+    
+    <article class="paper-card top-pick" style="animation-delay:0.1s">
+      <div class="paper-header">
+        <span class="rank-badge">#1</span>
+        <span class="journal-badge">mSystems / Microbiology Spectrum (estimated)</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">全球腸道病毒組圖譜揭示腸躁症亞型特異性與功能性變化</h3>
+      <p class="paper-title-en">A global atlas of the gut virome reveals subtype-specific and functional alterations in irritable bowel syndrome.</p>
+      <p class="one-liner">整合1104份跨區域樣本建立IBS病毒組圖譜，發現亞型特異性病毒特徵、神經遞質代謝相關功能基因豐富，且病毒特徵能優異預測亞型（AUC=0.92）。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">790名IBS患者（含IBS-D、IBS-C、IBS-M亞型）及314名健康對照，來自10個地理區域的11個隊列</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（觀察性多組學分析：宏基因組與類病毒顆粒富集宏病毒組數據）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">健康對照組；不同IBS亞型間比較；不同地理區域間比較</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">病毒組分類組成差異、輔助代謝基因功能豐富度（組氨酸/色胺酸代謝）、毒力因子與抗藥性基因谱、病毒特徵與焦慮憂鬱嚴重度相關性、機器學習亞型分類表現</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供迄今最大規模IBS病毒組基線資源，發現具備亞型診斷潛力（AUC 0.92）的病毒生物標記，並揭示病毒組參與神經遞質前體合成的新病理機制，為精準醫學與靶向治療開發奠基。</p>
+      <div class="paper-tags"><span class="tag">Microbiome</span><span class="tag">Gut-Brain Axis</span><span class="tag">Biomarkers</span><span class="tag">Precision Medicine</span><span class="tag">IBS Subtypes</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42861963/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.16s">
+      <div class="paper-header">
+        <span class="rank-badge">#2</span>
+        <span class="journal-badge">The Lancet / NEJM (estimated high-impact journal)</span>
+        <span class="utility-badge" style="background:#5a7a3a">高實用</span>
+      </div>
+      <h3 class="paper-title-zh">腸躁症與相關腸腦互動疾病</h3>
+      <p class="paper-title-en">Irritable bowel syndrome and related disorders of gut-brain interaction.</p>
+      <p class="one-liner">頂級期刊綜述闡述IBS等DGBI影響全球20%人口，病理涉及腸腦軸失調導致動力異常與內臟高敏，治療以共情管理、飲食調整、對症用藥為主，重症可考慮神經調控與心理療法。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">IBS、功能性便秘、功能性腹瀉等DGBI患者（全球盛行率約20%）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">分級治療策略：教育/飲食/生活型態調整、纖維調整、對症藥物、嚴重者行生物回饋/心理療法/醫療器材</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照（敘述性綜述）</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">症狀緩解、生活品質改善、醫療利用減少、治療依從性提升</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>權威綜述整合最新診斷標準與治療演算法，強調共情醫療與多模式管理的臨床價值，為基層醫師提供完整照護框架。</p>
+      <div class="paper-tags"><span class="tag">Clinical Guidelines</span><span class="tag">Gut-Brain Axis</span><span class="tag">Pharmacotherapy</span><span class="tag">Psychological Treatment</span><span class="tag">Diet / Nutrition</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/42956794/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.22s">
+      <div class="paper-header">
+        <span class="rank-badge">#3</span>
+        <span class="journal-badge">Current Gastroenterology Reports / similar review journal</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">經皮電神經場刺激：重振神經胃腸動力疾病的管理</h3>
+      <p class="paper-title-en">Percutaneous Electrical Nerve Field Stimulation: Revitalizing the Management of Neurogastrointestinal Motility Disorders.</p>
+      <p class="one-liner">系統性綜述證實PENFS為安全有效的非侵入性神經調控療法，透過邊緣系統調控、迷走神經傳遞與腸神經系統作用，顯著改善DGBI患者疼痛、噁心與殘障，耳廓異痛感與心率變異性為潛在預測生物標記。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">神經胃腸動力疾病及DGBI患者（含兒童/青少年為主，成人數據有限）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">經皮電神經場刺激 (PENFS)，非侵入性耳部電極刺激</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">假刺激對照、藥物單一治療、標準照護</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">疼痛評分、噁心程度、功能性殘障評分改善、安全性（不良事件極少）、治療反應預測標記（耳廓異痛感、心臟迷走神經效率）</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>提供強而有力的RCT與註冊數據支持，療效顯著且非藥物屬性極具吸引力，但成人長期療效、最佳劑量療程尚待釐清，目前臨床推廣仍處早期。</p>
+      <div class="paper-tags"><span class="tag">Neuromodulation</span><span class="tag">Non-pharmacologic Therapy</span><span class="tag">Gut-Brain Axis</span><span class="tag">Pediatric IBS</span><span class="tag">Biomarkers</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/43062611/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+
+    <article class="paper-card top-pick" style="animation-delay:0.28s">
+      <div class="paper-header">
+        <span class="rank-badge">#4</span>
+        <span class="journal-badge">New Zealand Medical Journal / similar</span>
+        <span class="utility-badge" style="background:#9f7a2e">中實用</span>
+      </div>
+      <h3 class="paper-title-zh">紐西蘭的腸腦互動疾病：長期存在的證據缺口與未被衡量的健康經濟後果</h3>
+      <p class="paper-title-en">Disorders of gut-brain interaction in Aotearoa New Zealand: a long-standing evidence gap with unmeasured health and economic consequences.</p>
+      <p class="one-liner">視點文章揭露紐西蘭缺乏當代DGBI流行病學數據（最新2002年），尤其毛利族群數據缺失，外推英國數據估算年度直接醫療成本達16億紐幣，佔GDP近1%，呼籲優先投入研究與公衛資源。</p>
+      
+      <div class="pico-grid">
+        <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">紐西蘭成人人口（特別關注毛利與太平洋島民族群）</span></div>
+        <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（範疇性回顧與經濟負擔外推模型）</span></div>
+        <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">英國、澳洲Rome IV標準流行率與成本數據</span></div>
+        <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">紐西蘭本地流行率數據缺失、族群健康不平等證據缺口、估算直接醫療成本約NZ$1.6億/年、總成本逼近GDP 1%</span></div>
+      </div>
+      <p class="utility-reason"><strong>臨床意義：</strong>雖非臨床干預研究，但精準量化疾病負擔為衛生政策制定、資源分配及健康公平提供關鍵證據，間接推動臨床服務改善。</p>
+      <div class="paper-tags"><span class="tag">Epidemiology</span><span class="tag">Health Economics</span><span class="tag">Health Equity</span><span class="tag">Health Policy</span><span class="tag">Clinical Guidelines</span></div>
+      <a class="paper-link" href="https://pubmed.ncbi.nlm.nih.gov/43056631/" target="_blank" rel="noopener">查看 PubMed 原文 →</a>
+    </article>
+  </section>
+
+  
+
+  
+  <section class="section">
+    <div class="section-title">📊 主題分布</div>
+    
+    <div class="topic-row">
+      <span class="topic-name">Gut-Brain Axis</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:100%"></div>
+      </div>
+      <span class="topic-count">4</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Clinical Guidelines</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Biomarkers</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:50%"></div>
+      </div>
+      <span class="topic-count">2</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Microbiome</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Diet / Nutrition</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Psychological Treatment</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Exercise / Lifestyle</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pharmacotherapy</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pediatric IBS</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Pain / Sensitization</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Epidemiology</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Health Economics</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Neuromodulation</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Precision Medicine</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:25%"></div>
+      </div>
+      <span class="topic-count">1</span>
+    </div>
+
+    <div class="topic-row">
+      <span class="topic-name">Sleep / Stress</span>
+      <div class="topic-bar-container">
+        <div class="topic-bar" style="width:0%"></div>
+      </div>
+      <span class="topic-count">0</span>
+    </div>
+  </section>
+
+  
+  <section class="section keywords-section">
+    <div class="section-title" style="justify-content:center">🏷️ 今日關鍵詞</div>
+    <span class="keyword-chip">gut-brain axis</span> <span class="keyword-chip">virome</span> <span class="keyword-chip">IBS subtypes</span> <span class="keyword-chip">neuromodulation</span> <span class="keyword-chip">PENFS</span> <span class="keyword-chip">health economics</span> <span class="keyword-chip">health equity</span> <span class="keyword-chip">biomarkers</span> <span class="keyword-chip">Rome IV</span> <span class="keyword-chip">disorders of gut-brain interaction</span>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://www.leepsyclinic.com/" target="_blank" rel="noopener">🏥 李政洋身心診所</a>
+      <a class="footer-link" href="https://blog.leepsyclinic.com/" target="_blank" rel="noopener">📬 訂閱電子報</a>
+      <a class="footer-link" href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener">☕ Buy Me a Coffee</a>
+    </div>
+<p class="footer-text">Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/irritable-bowel-syndrome">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>
